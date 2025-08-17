@@ -583,7 +583,7 @@ sl$label <- factor(sl$label, levels = sl$label)
 R3<- ggplot(sl, aes(x=point_est, y=label,shape=newgroup,color=new_group))  +
   geom_point(size=2) + scale_y_discrete(limits = rev(levels(sl$label)))+xlim(-0.7,0.7)+geom_vline(xintercept=0, color="black", linetype="dashed", alpha=.5) +
   geom_errorbarh(aes(xmin=lb_ci, xmax=ub_ci), height=.2) + theme(legend.position="none") +
-  ylab("N addition level and  Mean annual precipitation ") + xlab("Effect size (ln(RR))") +labs(title = "c")+
+  ylab("N addition level and  mean annual precipitation ") + xlab("Effect size (ln(RR))") +labs(title = "c")+
   scale_color_manual(values = c("#F6944B", "#66C1A4"))+
   scale_shape_manual(values = c(15,17,16))+
   geom_hline(yintercept=15.5, color="black", linetype="dashed", alpha=.5)+
@@ -658,7 +658,7 @@ sl$label <- factor(sl$label, levels = sl$label)
 R4<- ggplot(sl, aes(x=point_est, y=label,shape=newgroup,color=new_group))  +
   geom_point(size=2) + scale_y_discrete(limits = rev(levels(sl$label)))+xlim(-0.6,0.6)+geom_vline(xintercept=0, color="black", linetype="dashed", alpha=.5) +
   geom_errorbarh(aes(xmin=lb_ci, xmax=ub_ci), height=.2) + theme(legend.position="none") +
-  ylab("N addition level and Mean annual temperature") + xlab("Effect size (ln(RR))") +labs(title = "a")+
+  ylab("N addition level and mean annual temperature") + xlab("Effect size (ln(RR))") +labs(title = "a")+
   scale_color_manual(values = c("#F6944B", "#8C9FCA"))+
   scale_shape_manual(values = c(15,17,16))+
   geom_hline(yintercept=15.5, color="black", linetype="dashed", alpha=.5)+
@@ -727,7 +727,7 @@ sl$label <- factor(sl$label, levels = sl$label)
 R5<- ggplot(sl, aes(x=point_est, y=label,shape=newgroup,color=new_group))  +
   geom_point(size=2) + scale_y_discrete(limits = rev(levels(sl$label)))+xlim(-0.5,0.5)+geom_vline(xintercept=0, color="black", linetype="dashed", alpha=.5) +
   geom_errorbarh(aes(xmin=lb_ci, xmax=ub_ci), height=.2) + theme(legend.position="none") +
-  ylab("N addition level and Litter type") + xlab("Effect size (ln(RR))") +labs(title = "b")+
+  ylab("N addition level and litter type") + xlab("Effect size (ln(RR))") +labs(title = "b")+
   scale_color_manual(values = c("#F6944B", "#88CEE6"))+
   scale_shape_manual(values = c(15,17,16))+
   geom_hline(yintercept=13.5, color="black", linetype="dashed", alpha=.5)+
@@ -866,9 +866,9 @@ r7 <- rma.mv(yi, vi,mods=~N_level+decomposition.time.level+temperature.level+pre
 summary(r7)
 library(MuMIn)
 eval(metafor:::.MuMIn)
-###模型选择
+###Model seltection
 res <- dredge(r7, trace=2)
-### 抽取与AIC值最低模型差值在2以内的模型，作为最优模型集
+### Select model with delta AIC less or equal to 2 to be the best possible model
 sm<-subset(res, delta <= 2, recalc.weights=FALSE)
 sm
 r7.0 <- rma.mv(yi, vi,mods=~decomposition.time.level,random=list(~1|numbers/id),method = "ML", data =dat_R)
@@ -1173,7 +1173,7 @@ sl$label <- factor(sl$label, levels = sl$label)
 M2<- ggplot(sl, aes(x=point_est, y=label,shape=newgroup,color=new_group))  +
   geom_point(size=2) + scale_y_discrete(limits = rev(levels(sl$label)))+xlim(-0.5,0.5)+geom_vline(xintercept=0, color="black", linetype="dashed", alpha=.5) +
   geom_errorbarh(aes(xmin=lb_ci, xmax=ub_ci), height=.2) + theme(legend.position="none") +
-  ylab("N addition level and Incubation time") + xlab("Effect size (ln(RR))") +labs(title = "a")+
+  ylab("N addition level and incubation time") + xlab("Effect size (ln(RR))") +labs(title = "a")+
   scale_color_manual(values = c("#F6944B", "#E995C9"))+
   scale_shape_manual(values = c(15,17,16))+
   geom_hline(yintercept=12.5, color="black", linetype="dashed", alpha=.5)+
@@ -1230,7 +1230,7 @@ sl$label <- factor(sl$label, levels = sl$label)
 M3<- ggplot(sl, aes(x=point_est, y=label,shape=newgroup,color=new_group))  +
   geom_point(size=2) + scale_y_discrete(limits = rev(levels(sl$label)))+xlim(-0.7,0.7)+geom_vline(xintercept=0, color="black", linetype="dashed", alpha=.5) +
   geom_errorbarh(aes(xmin=lb_ci, xmax=ub_ci), height=.2) + theme(legend.position="none") +
-  ylab("N addition level and  Mean annual precipitation ") + xlab("Effect size (ln(RR))") +labs(title = "b")+
+  ylab("N addition level and  mean annual precipitation ") + xlab("Effect size (ln(RR))") +labs(title = "b")+
   scale_color_manual(values = c("#F6944B", "#66C1A4"))+
   scale_shape_manual(values = c(15,17,16))+
   geom_hline(yintercept=12.5, color="black", linetype="dashed", alpha=.5)+
@@ -1289,7 +1289,7 @@ sl$label <- factor(sl$label, levels = sl$label)
 M4<- ggplot(sl, aes(x=point_est, y=label,shape=newgroup,color=new_group))  +
   geom_point(size=2) + scale_y_discrete(limits = rev(levels(sl$label)))+xlim(-0.6,0.6)+geom_vline(xintercept=0, color="black", linetype="dashed", alpha=.5) +
   geom_errorbarh(aes(xmin=lb_ci, xmax=ub_ci), height=.2) + theme(legend.position="none") +
-  ylab("N addition level and Mean annual temperature") + xlab("Effect size (ln(RR))") +labs(title = "b")+
+  ylab("N addition level and mean annual temperature") + xlab("Effect size (ln(RR))") +labs(title = "b")+
   scale_color_manual(values = c("#F6944B", "#8C9FCA"))+
   scale_shape_manual(values = c(15,17,16))+
   geom_hline(yintercept=12.5, color="black", linetype="dashed", alpha=.5)+
@@ -1352,7 +1352,7 @@ sl$label <- factor(sl$label, levels = sl$label)
 M5<- ggplot(sl, aes(x=point_est, y=label,shape=newgroup,color=new_group))  +
   geom_point(size=2) + scale_y_discrete(limits = rev(levels(sl$label)))+xlim(-0.5,0.5)+geom_vline(xintercept=0, color="black", linetype="dashed", alpha=.5) +
   geom_errorbarh(aes(xmin=lb_ci, xmax=ub_ci), height=.2) + theme(legend.position="none") +
-  ylab("N addition level and Litter type") + xlab("Effect size (ln(RR))") +labs(title = "c")+
+  ylab("N addition level and litter type") + xlab("Effect size (ln(RR))") +labs(title = "c")+
   scale_color_manual(values = c("#F6944B", "#88CEE6"))+
   scale_shape_manual(values = c(15,17,16))+
   geom_hline(yintercept=12.5, color="black", linetype="dashed", alpha=.5)+
@@ -1735,7 +1735,7 @@ sl$label <- factor(sl$label, levels = sl$label)
 I2<- ggplot(sl, aes(x=point_est, y=label,shape=newgroup,color=new_group))  +
   geom_point(size=2) + scale_y_discrete(limits = rev(levels(sl$label)))+xlim(-0.7,0.7)+geom_vline(xintercept=0, color="black", linetype="dashed", alpha=.5) +
   geom_errorbarh(aes(xmin=lb_ci, xmax=ub_ci), height=.2) + theme(legend.position="none") +
-  ylab("N addition level and Incubation time") + xlab("Effect size (ln(RR))") +labs(title = "a")+
+  ylab("N addition level and incubation time") + xlab("Effect size (ln(RR))") +labs(title = "a")+
   scale_color_manual(values = c("#F6944B", "#E995C9"))+
   scale_shape_manual(values = c(15,17,16))+
   geom_hline(yintercept=12.5, color="black", linetype="dashed", alpha=.5)+
@@ -1794,7 +1794,7 @@ sl$label <- factor(sl$label, levels = sl$label)
 I3<- ggplot(sl, aes(x=point_est, y=label,shape=newgroup,color=new_group))  +
   geom_point(size=2) + scale_y_discrete(limits = rev(levels(sl$label)))+xlim(-1,1)+geom_vline(xintercept=0, color="black", linetype="dashed", alpha=.5) +
   geom_errorbarh(aes(xmin=lb_ci, xmax=ub_ci), height=.2) + theme(legend.position="none") +
-  ylab("N addition level and  Mean annual precipitation ") + xlab("Effect size (ln(RR))") +labs(title = "b")+
+  ylab("N addition level and  mean annual precipitation ") + xlab("Effect size (ln(RR))") +labs(title = "b")+
   scale_color_manual(values = c("#F6944B", "#66C1A4"))+
   scale_shape_manual(values = c(15,17,16))+
   geom_hline(yintercept=12.5, color="black", linetype="dashed", alpha=.5)+
@@ -1854,7 +1854,7 @@ sl$label <- factor(sl$label, levels = sl$label)
 I4<- ggplot(sl, aes(x=point_est, y=label,shape=newgroup,color=new_group))  +
   geom_point(size=2) + scale_y_discrete(limits = rev(levels(sl$label)))+xlim(-1.5,1.5)+geom_vline(xintercept=0, color="black", linetype="dashed", alpha=.5) +
   geom_errorbarh(aes(xmin=lb_ci, xmax=ub_ci), height=.2) + theme(legend.position="none") +
-  ylab("N addition level and Mean annual temperature") + xlab("Effect size (ln(RR))") +labs(title = "b")+
+  ylab("N addition level and mean annual temperature") + xlab("Effect size (ln(RR))") +labs(title = "b")+
   scale_color_manual(values = c("#F6944B", "#8C9FCA"))+
   scale_shape_manual(values = c(15,17,16))+
   geom_hline(yintercept=12.5, color="black", linetype="dashed", alpha=.5)+
@@ -1944,7 +1944,7 @@ sl$label <- factor(sl$label, levels = sl$label)
 I5<- ggplot(sl, aes(x=point_est, y=label,shape=newgroup,color=new_group))  +
   geom_point(size=2) + scale_y_discrete(limits = rev(levels(sl$label)))+xlim(-1,1)+geom_vline(xintercept=0, color="black", linetype="dashed", alpha=.5) +
   geom_errorbarh(aes(xmin=lb_ci, xmax=ub_ci), height=.2) + theme(legend.position="none") +
-  ylab("N addition level and Litter type") + xlab("Effect size (ln(RR))") +labs(title = "c")+
+  ylab("N addition level and litter type") + xlab("Effect size (ln(RR))") +labs(title = "c")+
   scale_color_manual(values = c("#F6944B", "#88CEE6"))+
   scale_shape_manual(values = c(15,17,16))+
   geom_hline(yintercept=12.5, color="black", linetype="dashed", alpha=.5)+
@@ -2342,7 +2342,7 @@ sl$label <- factor(sl$label, levels = sl$label)
 S2<- ggplot(sl, aes(x=point_est, y=label,shape=newgroup,color=new_group))  +
   geom_point(size=2) + scale_y_discrete(limits = rev(levels(sl$label)))+xlim(-0.5,0.5)+geom_vline(xintercept=0, color="black", linetype="dashed", alpha=.5) +
   geom_errorbarh(aes(xmin=lb_ci, xmax=ub_ci), height=.2) + theme(legend.position="none") +
-  ylab("N addition level and Incubation time") + xlab("Effect size (ln(RR))") +labs(title = "b")+
+  ylab("N addition level and incubation time") + xlab("Effect size (ln(RR))") +labs(title = "b")+
   scale_color_manual(values = c("#F6944B", "#E995C9"))+
   scale_shape_manual(values = c(15,17,16))+
   geom_hline(yintercept=12.5, color="black", linetype="dashed", alpha=.5)+
@@ -2398,7 +2398,7 @@ sl$label <- factor(sl$label, levels = sl$label)
 S3<- ggplot(sl, aes(x=point_est, y=label,shape=newgroup,color=new_group))  +
   geom_point(size=2) + scale_y_discrete(limits = rev(levels(sl$label)))+xlim(-0.7,0.7)+geom_vline(xintercept=0, color="black", linetype="dashed", alpha=.5) +
   geom_errorbarh(aes(xmin=lb_ci, xmax=ub_ci), height=.2) + theme(legend.position="none") +
-  ylab("N addition level and  Mean annual precipitation ") + xlab("Effect size (ln(RR))") +labs(title = "a")+
+  ylab("N addition level and  mean annual precipitation ") + xlab("Effect size (ln(RR))") +labs(title = "a")+
   scale_color_manual(values = c("#F6944B", "#66C1A4"))+
   scale_shape_manual(values = c(15,17,16))+
   geom_hline(yintercept=12.5, color="black", linetype="dashed", alpha=.5)+
@@ -2460,7 +2460,7 @@ sl$label <- factor(sl$label, levels = sl$label)
 S4<- ggplot(sl, aes(x=point_est, y=label,shape=newgroup,color=new_group))  +
   geom_point(size=2) + scale_y_discrete(limits = rev(levels(sl$label)))+xlim(-0.6,0.6)+geom_vline(xintercept=0, color="black", linetype="dashed", alpha=.5) +
   geom_errorbarh(aes(xmin=lb_ci, xmax=ub_ci), height=.2) + theme(legend.position="none") +
-  ylab("N addition level and Mean annual temperature") + xlab("Effect size (ln(RR))") +labs(title = "b")+
+  ylab("N addition level and mean annual temperature") + xlab("Effect size (ln(RR))") +labs(title = "b")+
   scale_color_manual(values = c("#F6944B", "#8C9FCA"))+
   scale_shape_manual(values = c(15,17,16))+
   geom_hline(yintercept=12.5, color="black", linetype="dashed", alpha=.5)+
@@ -2522,7 +2522,7 @@ sl$label <- factor(sl$label, levels = sl$label)
 S5<- ggplot(sl, aes(x=point_est, y=label,shape=newgroup,color=new_group))  +
   geom_point(size=2) + scale_y_discrete(limits = rev(levels(sl$label)))+xlim(-0.5,0.5)+geom_vline(xintercept=0, color="black", linetype="dashed", alpha=.5) +
   geom_errorbarh(aes(xmin=lb_ci, xmax=ub_ci), height=.2) + theme(legend.position="none") +
-  ylab("N addition level and Litter type") + xlab("Effect size (ln(RR))") +labs(title = "c")+
+  ylab("N addition level and litter type") + xlab("Effect size (ln(RR))") +labs(title = "c")+
   scale_color_manual(values = c("#F6944B", "#88CEE6"))+
   scale_shape_manual(values = c(15,17,16))+
   geom_hline(yintercept=12.5, color="black", linetype="dashed", alpha=.5)+
