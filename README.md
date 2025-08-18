@@ -5,4 +5,4 @@ article about "Moderate nitrogen addition reduces soil fauna density under
 high precipitation, but not soil fauna contribution to global
 litter decomposition" submitted to Global Ecology and Biogeography. This
 meta-analysis aims to find out globally how does N deposition affect litter 
-and soil fauna abundance and diversity..
+and soil fauna abundance and diversity. Please cite as [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16892126.svg)](https://doi.org/10.5281/zenodo.16892126)
